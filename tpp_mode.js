@@ -21,7 +21,6 @@
  */
 
 
-
 (function($){
 
     $.fn.extend({
@@ -42,8 +41,6 @@
 
  })(jQuery);
 
-
-
  function democracy() { $('#chat_text_input').valAppend('democracy'); TPP('democracy');} //Game mode : Democracy
 
   function anarchy() { $('#chat_text_input').valAppend('anarchy'); TPP('anarchy');} //}   //Game mode : Anarchy
@@ -57,8 +54,3 @@
       setTimeout(function(){$("#chat_speak").click();},30000); //send game mode every 30 seconds
 
     }
-
-
-
-
-
