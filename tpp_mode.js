@@ -1,6 +1,7 @@
 /* 
 
  * tpp_mode.js
+ *
  * Auto vote @ every 30 seconds for TPP game mode **works only with twitch IRC web client**
  * How to: 
  * copy paste this script into the console 
