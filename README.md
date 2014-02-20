@@ -4,8 +4,8 @@ TPP-mode
 This is a quick and dirty script for TwitchPlaysPokemon : http://www.twitch.tv/twitchplayspokemon
 
 
-#Auto vote @ every 30 seconds for TPP game mode **works only with twitch IRC web client**
-#Keep track of your votes
+# Auto vote @ every 30 seconds for TPP game mode **works only with twitch IRC web client**
+# Keep track of your votes
 
 How to: 
  * copy paste the script into your browser console 
