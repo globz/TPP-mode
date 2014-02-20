@@ -9,9 +9,8 @@ Auto vote @ every 30 seconds for TPP game mode **works only with twitch IRC web 
 How to: 
  * copy paste the script into your browser console 
  * click the vote button by selecting either anarchy/democracy mode
- * keep track of your votes ie; [Vote Anarchy](5) 
 
- 
+
  * =>Anarchy mode is the "classic" mode, where everyone's inputs are applied immediately.
 
  * =>Democracy mode chooses the most popular input provided during a 20 second voting period.
