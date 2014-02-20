@@ -6,9 +6,10 @@ This is a quick and dirty script for TwitchPlaysPokemon : http://www.twitch.tv/t
 
 Auto vote @ every 30 seconds for TPP game mode **works only with twitch IRC web client**
 
- * How to: 
- * copy paste the script into the console 
- * then type into the console TPP('democracy'); or TPP('anarchy'); 
+How to: 
+ * copy paste the script into your browser console 
+ * click the vote button by selecting either anarchy/democracy mode
+ * keep track of your votes ie; [Vote Anarchy](5) 
 
  
  * =>Anarchy mode is the "classic" mode, where everyone's inputs are applied immediately.
