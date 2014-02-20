@@ -15,24 +15,26 @@ PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIG
 HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- *
+
+
  * tpp_mode.js
  *
  * Auto vote @ every 30 seconds for TPP game mode **works only with twitch IRC web client**
- * How to: 
- * copy paste this script into the console 
- * then type into the console TPP('democracy'); or TPP('anarchy'); 
- *
- * => Anarchy mode is the "classic" mode, where everyone's inputs are applied immediately.
- * => Democracy mode is vote-based and has a more sophisticated input system.
- *
+ * Keep track of your votes
+
+How to: 
+ * copy paste the script into your browser console 
+ * click the vote button by selecting either anarchy/democracy mode
+
+=> Anarchy mode is the "classic" mode, where everyone's inputs are applied immediately.
+=> Democracy mode is vote-based and has a more sophisticated input system.
+
 
  * Author: globz @ www.kittybomber.com
 
  */
 
-
+//Homebrew Append function for chat box
 (function($){
 
     $.fn.extend({
@@ -53,16 +55,61 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
  })(jQuery);
 
- function democracy() { $('#chat_text_input').valAppend('democracy'); TPP('democracy');} //Game mode : Democracy
+ //Keep track of vote counts
+  var voteD = 0; //Democracy votes
+   var voteA = 0;//Anarchy votes
+    function voteCount(mode){
 
-  function anarchy() { $('#chat_text_input').valAppend('anarchy'); TPP('anarchy');} //}   //Game mode : Anarchy
+      if (mode == 'democracy'){ voteUP = voteD++; } //Add +1 vote for democracy
 
-   function TPP(mode) {
+        if (mode == 'anarchy'){ voteUP = voteA++; } //Add +1 vote for anarchy
+   }
 
-    if (mode == 'democracy'){setTimeout(function(){democracy();},29000);}
+   function democracy() { $('#chat_text_input').valAppend('democracy'); TPP('democracy'); voteCount('democracy');} //Game mode : +1 vote for Democracy
 
-     if (mode == 'anarchy'){setTimeout(function(){anarchy();},29000);}
+    function anarchy() { $('#chat_text_input').valAppend('anarchy'); TPP('anarchy'); voteCount('anarchy');}   //Game mode : +1 vote for Anarchy
 
-      setTimeout(function(){$("#chat_speak").click();},30000); //send game mode every 30 seconds
+     function TPP(mode) {
 
-    }
+      if (mode == 'democracy'){setTimeout(function(){democracy();},29000);}
+
+       if (mode == 'anarchy'){setTimeout(function(){anarchy();},29000);}
+
+        //send game mode vote every 30 seconds
+        setTimeout(function(){$("#chat_speak").click();$('#voteA').empty().append("("+ voteA +")");$('#voteD').empty().append("("+ voteD +")");},30000); 
+
+       }
+
+// --- UI ---
+$(
+    "<style type='text/css' >" +
+        "a.anarchy {" +
+            "width: 50px;" +
+            "padding-left: 0;" +
+            "padding-top: 0;" +
+            "height: 8px;" +
+            "line-height: 115%;" +
+            "cursor: pointer;" +
+        "}" +
+
+        "a.democracy {" +
+            "width: 35px;" +
+            "padding-left: 15px;" +
+            "padding-top: 0;" +
+            "height: 8px;" +
+            "line-height: 115%;" +
+            "cursor: pointer;" +
+        "}" +       
+    " </style>"
+).appendTo("head");
+
+// Add vote buttons under the chat box
+$("<a class='anarchy'>[Vote Anarchy]</a><i id='voteA'></i><a class='democracy'>[Vote Democracy]</a><i id='voteD'></i>").insertAfter("#chat_line_list");
+
+$(".anarchy").click(function () {
+    TPP('anarchy');
+});
+
+$(".democracy").click(function () {
+    TPP('democracy');
+});
