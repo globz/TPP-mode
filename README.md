@@ -12,7 +12,7 @@ How to:
  * copy paste the script into your browser console 
  * click the vote button by selecting either anarchy/democracy mode
 
-
+![](http://kittybomber.com/img/tpp_mode.png)
 
 =>Anarchy mode is the "classic" mode, where everyone's inputs are applied immediately.
 
