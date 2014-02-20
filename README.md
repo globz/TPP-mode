@@ -15,6 +15,7 @@ Auto vote @ every 30 seconds for TPP game mode **works only with twitch IRC web 
 
  * =>Democracy mode chooses the most popular input provided during a 20 second voting period.
 
+
 In order to switch from one mode to the other a certain number of votes must be for the opposing mode.
 
 To get from anarchy mode to democracy mode 80% of the votes must be for democracy mode.
