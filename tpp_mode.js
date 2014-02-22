@@ -77,7 +77,7 @@ How to:
 
   //Game mode : +1 vote for Democracy
    function democracy() {
-                                            document.getElementById('chat_text_input').setAttribute('disabled'); 
+                                            document.getElementById('chat_text_input').setAttribute('disabled','true'); 
                                                $('#chat_text_input').val('').valAppend('democracy'); 
                                                  TPP('democracy'); 
                                                    voteCount('democracy');
@@ -85,7 +85,7 @@ How to:
 
  //Game mode : +1 vote for Anarchy
     function anarchy() { 
-                                       document.getElementById('chat_text_input').setAttribute('disabled'); 
+                                       document.getElementById('chat_text_input').setAttribute('disabled','true'); 
                                           $('#chat_text_input').val('').valAppend('anarchy'); 
                                             TPP('anarchy'); 
                                               voteCount('anarchy');
