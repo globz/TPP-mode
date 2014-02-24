@@ -75,24 +75,24 @@ How to:
 
         if (mode == 'anarchy'){ voteUP = voteA++; } //Add +1 vote for anarchy
 
-                                                                                                 }                         
+                                                                                                }                         
 
   //Game mode : +1 vote for Democracy
    function democracy() {
                                            if(flag == 'democracy'){
                                             document.getElementById('chat_text_input').setAttribute('disabled','true'); 
-                                               $('#chat_text_input').val('').valAppend('democracy'); 
-                                                 TPP('democracy'); 
-                                                   voteCount('democracy');}else{anarchy();}
+                                             $('#chat_text_input').val('').valAppend('democracy'); 
+                                              TPP('democracy'); 
+                                               voteCount('democracy');}else{anarchy();}
                                                                                                 } 
 
  //Game mode : +1 vote for Anarchy
     function anarchy() {
                                       if(flag == 'anarchy'){ 
                                        document.getElementById('chat_text_input').setAttribute('disabled','true'); 
-                                          $('#chat_text_input').val('').valAppend('anarchy'); 
-                                            TPP('anarchy'); 
-                                              voteCount('anarchy');}else{democracy();}
+                                        $('#chat_text_input').val('').valAppend('anarchy'); 
+                                         TPP('anarchy'); 
+                                          voteCount('anarchy');}else{democracy();}
                                                                                                }   
 
 
