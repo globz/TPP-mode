@@ -64,9 +64,11 @@ How to:
  })(jQuery);
 
 
- //Keep track of vote counts
-  var voteD = 0; //Democracy votes
+   var flag;       //voting flag
+   var voteD = 0; //Democracy votes
    var voteA = 0;//Anarchy votes
+   
+    //Keep track of vote counts
     function voteCount(mode){
 
       if (mode == 'democracy'){ voteUP = voteD++; } //Add +1 vote for democracy
@@ -77,18 +79,20 @@ How to:
 
   //Game mode : +1 vote for Democracy
    function democracy() {
+                                           if(flag == 'democracy'){
                                             document.getElementById('chat_text_input').setAttribute('disabled','true'); 
                                                $('#chat_text_input').val('').valAppend('democracy'); 
                                                  TPP('democracy'); 
-                                                   voteCount('democracy');
+                                                   voteCount('democracy');}else{anarchy();}
                                                                                                 } 
 
  //Game mode : +1 vote for Anarchy
-    function anarchy() { 
+    function anarchy() {
+                                      if(flag == 'anarchy'){ 
                                        document.getElementById('chat_text_input').setAttribute('disabled','true'); 
                                           $('#chat_text_input').val('').valAppend('anarchy'); 
                                             TPP('anarchy'); 
-                                              voteCount('anarchy');
+                                              voteCount('anarchy');}else{democracy();}
                                                                                                }   
 
 
@@ -152,11 +156,11 @@ $("<a class='anarchy'>[Vote Anarchy]</a><i id='voteA'></i><a class='democracy'>[
 $(".anarchy").click(function () {
  
     TPP('anarchy');
-    
+    flag = 'anarchy'; //set voting flag
 });
 
 $(".democracy").click(function () {
 
     TPP('democracy');
-
+    flag = 'democracy'; //set voting flag
 });
